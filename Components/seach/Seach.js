@@ -1,7 +1,92 @@
-import { View, Text, StyleSheet, SafeAreaView, TextInput, Image } from 'react-native';
 import React from 'react';
-
+import { View, Text, StyleSheet, TextInput, Image, FlatList, TouchableOpacity } from 'react-native';
+import { ScrollView } from 'react-native-gesture-handler';
+import styles from './style';
 const Search = () => {
+  type ContactItem = {
+    name: string;
+    photo: any;
+  };
+  const backgroundColors = [
+    'rgba(83, 177, 117, 0.10)',
+    'rgba(248, 164, 76, 0.10)',
+    'rgba(247, 165, 147, 0.25)', 
+    'rgba(211, 176, 224, 0.25)',
+    'rgba(253, 229, 152, 0.25)',
+    'rgba(183, 223, 245, 0.25)',
+
+  ];
+  const borderColor =[
+    'rgba(83, 177, 117, 0.70)',
+    'rgba(248, 164, 76, 0.70)',
+    '#F7A59',
+    '#D3B0E0',
+    '#FDE598',
+    '#B7DFF5'
+  ];
+
+  const data: ContactItem[] = [
+    {
+      name: 'Fresh Fruits & Vegetable',
+      photo: require('../../Image/Frashfruits.png'),
+    },
+    {
+      name: 'Cooking Oil & Ghee',
+      photo: require('../../Image/cooking.png'),
+    },
+    {
+      name: 'Meat & Fish',
+      photo: require('../../Image/meat.png'),
+    },
+    {
+      name: 'Bakery & Snacks',
+      photo: require('../../Image/Bakery.png'),
+    },
+    {
+      name: 'Dairy & Eggs',
+      photo: require('../../Image/egg.png'),
+    },
+    {
+      name: 'Beverages',
+      photo: require('../../Image/Beverages.png'),
+    },
+    {
+      name: 'Fresh Fruits & Vegetable',
+      photo: require('../../Image/Frashfruits.png'),
+    },
+    {
+      name: 'Cooking Oil & Ghee',
+      photo: require('../../Image/cooking.png'),
+    },
+    {
+      name: 'Meat & Fish',
+      photo: require('../../Image/meat.png'),
+    },
+    {
+      name: 'Bakery & Snacks',
+      photo: require('../../Image/Bakery.png'),
+    },
+    {
+      name: 'Dairy & Eggs',
+      photo: require('../../Image/egg.png'),
+    },
+    {
+      name: 'Beverages',
+      photo: require('../../Image/Beverages.png'),
+    },
+  ];
+
+  const ContactItemList = ({ contact, index }: { contact: ContactItem; index: number }) => {
+    return (
+      <TouchableOpacity style={[styles.container1, 
+      { backgroundColor: backgroundColors[index % backgroundColors.length],
+       borderColor: borderColor[index % borderColor.length]}]}>
+        <Image source={contact.photo} style={styles.avatar} />
+        <Text style={styles.name}>{contact.name} </Text>
+      </TouchableOpacity>
+    );
+  };
+
   return (
     <View style={styles.container}>
       <View style={styles.contaifind}>
@@ -13,52 +98,18 @@ const Search = () => {
           <TextInput placeholder='Search Store' clearButtonMode='always' style={styles.search} />
         </View>
       </View>
+
+      <FlatList
+        data={data}
+        renderItem={({ item, index }) => <ContactItemList contact={item} index={index} />}
+        keyExtractor={(item, index) => index.toString()}
+        horizontal={false}
+        numColumns={2}
+        contentContainerStyle={styles.flatListContainer}
+      />
     </View>
   );
 };
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'flex-start',
-  },
-  findtext: {
-    fontSize: 20,
-    fontWeight: 'bold',
-    color: 'black',
-    fontFamily: 'Gilroy-Bold',
-    lineHeight: 20,
-  },
-  contaifind: {
-    width: 126,
-    height: 18,
-    marginTop: 56.93,
-  },
-  containersearch: {
-    width: '100%',
-    padding: 20,
-    marginTop: 26,
-  },
-  searchWrapper: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    width: '100%',
-    height: 51,
-    borderRadius: 15,
-    borderWidth: 1,
-    borderColor: '#ccc',
-    paddingHorizontal: 10,
-  },
-  searchIcon: {
-    width: 20,
-    height: 20,
-    marginRight: 10,
-  },
-  search: {
-    flex: 1,
-  },
-});
 
 export default Search;
