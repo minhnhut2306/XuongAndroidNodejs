@@ -3,10 +3,7 @@ import { View, Text, StyleSheet, TextInput, Image, FlatList, TouchableOpacity } 
 import { ScrollView } from 'react-native-gesture-handler';
 import styles from './style';
 const Search = () => {
-  type ContactItem = {
-    name: string;
-    photo: any;
-  };
+  
   const backgroundColors = [
     'rgba(83, 177, 117, 0.10)',
     'rgba(248, 164, 76, 0.10)',
@@ -25,7 +22,7 @@ const Search = () => {
     '#B7DFF5'
   ];
 
-  const data: ContactItem[] = [
+  const data = [
     {
       name: 'Fresh Fruits & Vegetable',
       photo: require('../../Image/Frashfruits.png'),
@@ -76,17 +73,21 @@ const Search = () => {
     },
   ];
 
-  const ContactItemList = ({ contact, index }: { contact: ContactItem; index: number }) => {
+  const ContactItemList = ({ contact, index }) => {
     return (
       <TouchableOpacity style={[styles.container1, 
-      { backgroundColor: backgroundColors[index % backgroundColors.length],
+      {backgroundColor: backgroundColors[index % backgroundColors.length],
        borderColor: borderColor[index % borderColor.length]}]}>
         <Image source={contact.photo} style={styles.avatar} />
         <Text style={styles.name}>{contact.name} </Text>
       </TouchableOpacity>
     );
   };
-
+   const renderItem = ({ item, index }) => {
+    return (
+      <ContactItemList contact={item} index={index} />
+    );
+  };
   return (
     <View style={styles.container}>
       <View style={styles.contaifind}>
@@ -101,9 +102,8 @@ const Search = () => {
 
       <FlatList
         data={data}
-        renderItem={({ item, index }) => <ContactItemList contact={item} index={index} />}
+        renderItem={renderItem}
         keyExtractor={(item, index) => index.toString()}
-        horizontal={false}
         numColumns={2}
         contentContainerStyle={styles.flatListContainer}
       />

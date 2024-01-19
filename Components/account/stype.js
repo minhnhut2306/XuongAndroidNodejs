@@ -1,16 +1,14 @@
 import { StyleSheet } from "react-native";
 const styles = StyleSheet.create({
     container: {
-        height:'100%',
+        flex: 1,
         backgroundColor: 'white',
-
     },
     header: {
 
         height: 164.15,
         flexDirection: 'row'
     },
-
     avatar: {
         width: 63.44,
         height: 64.32,
@@ -21,8 +19,6 @@ const styles = StyleSheet.create({
         position: 'absolute',
         marginTop: 80.49,
         marginLeft: 108.6,
-
-
     },
     ten: {
         flexDirection: 'row',
@@ -61,54 +57,47 @@ const styles = StyleSheet.create({
         borderBottomWidth: 1,
         borderColor: '#E2E2E2'
     },
-    iconContainer:{
-        flex:1,
+    iconContainer: {
+        flex: 1,
     },
     icon: {
         color: 'black',
-        
         marginLeft: 26,
-   
-
     },
     nametask: {
         color: 'black',
         fontSize: 18,
         flex: 5,
         fontWeight: '600',
-    },arrowRight:{
-        marginRight:30,
-
+    }, arrowRight: {
+        marginRight: 30,
     },
-    buttonContainer:{
-        justifyContent:'center',
-        alignItems:'center',
-      
-
+    buttonContainer: {
+        justifyContent: 'center',
+        alignItems: 'center',
     },
-    buttonLogout:{
-        flexDirection:'row',
-        width:364,
-        height:67,
-        marginTop:20,
-        borderRadius:19,
-        backgroundColor:'#F2F3F2',
-        justifyContent:'center',
-        alignItems:'center',
-      
+    buttonLogout: {
+        flexDirection: 'row',
+        width: 364,
+        height: 67,
+        marginTop: 20,
+        borderRadius: 19,
+        backgroundColor: '#F2F3F2',
+        justifyContent: 'center',
+        alignItems: 'center',
     },
-    textLogout:{
-        color:'#53B175',
-        fontSize:18,
-        textAlign:'center',
-        fontWeight:'600'
+    textLogout: {
+        color: '#53B175',
+        fontSize: 18,
+        textAlign: 'center',
+        fontWeight: '600'
 
-    },imgLogout:{
-    position:'absolute',
-    left:30,
+    }, imgLogout: {
+        position: 'absolute',
+        left: 30,
 
     }
-    
+
 
 
 })

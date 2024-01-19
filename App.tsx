@@ -9,6 +9,7 @@ import FavouriteNavigation from './Components/navigation/FavouriteNavigation';
 import SeachNavigation from './Components/navigation/SeachNavigation';
 import ShopNavigation from './Components/navigation/ShopNavigation';
 import TabNavigation from './Components/navigation/TabNavigation';
+import SplashScreen from './Components/SplashScreen/SplashScreen';
 
 
 const Stack = createStackNavigator();
@@ -22,6 +23,7 @@ const App = () => {
       <Stack.Screen name="CartNavigation" component={CartNavigation} options={{ headerShown: false}} />
       <Stack.Screen name="AccountNavigation" component={AccountNavigation} options={{ headerShown: false}} />
       <Stack.Screen name="TabNavigation" component={TabNavigation} options={{ headerShown: false}} />
+      <Stack.Screen name="SplashScreen" component={SplashScreen} options={{ headerShown: false}} />
     </Stack.Navigator>
   </NavigationContainer>
 
