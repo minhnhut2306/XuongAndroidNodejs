@@ -2,15 +2,15 @@ import { View, Text, Image } from 'react-native'
 import React from 'react'
 import styles from './style'
 
-const index = () => {
+const SplashScreen = () => {
   return (
     <View style={styles.container}>
      <Image
         style={styles.Logo}
-        source={require('./../../Image/Logo.png')}
+        source={require('./../../../assets/Image/Logo.png')}
       />
     </View>
   )
 }
 
-export default index
+export default SplashScreen

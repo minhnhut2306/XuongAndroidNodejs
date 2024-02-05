@@ -3,17 +3,20 @@ import { View, Text, StyleSheet, TextInput, Image, FlatList, TouchableOpacity } 
 import { ScrollView } from 'react-native-gesture-handler';
 import styles from './style';
 const Search = () => {
+<<<<<<< HEAD:Components/seach/Seach.js
   
+=======
+>>>>>>> MinhNhut:Components/main/tabs/seach/Seach.js
   const backgroundColors = [
     'rgba(83, 177, 117, 0.10)',
     'rgba(248, 164, 76, 0.10)',
-    'rgba(247, 165, 147, 0.25)', 
+    'rgba(247, 165, 147, 0.25)',
     'rgba(211, 176, 224, 0.25)',
     'rgba(253, 229, 152, 0.25)',
     'rgba(183, 223, 245, 0.25)',
 
   ];
-  const borderColor =[
+  const borderColor = [
     'rgba(83, 177, 117, 0.70)',
     'rgba(248, 164, 76, 0.70)',
     '#F7A59',
@@ -25,59 +28,67 @@ const Search = () => {
   const data = [
     {
       name: 'Fresh Fruits & Vegetable',
-      photo: require('../../Image/Frashfruits.png'),
+      photo: require('../../../../assets/Image/Frashfruits.png'),
     },
     {
       name: 'Cooking Oil & Ghee',
-      photo: require('../../Image/cooking.png'),
+      photo: require('../../../../assets/Image/cooking.png'),
     },
     {
       name: 'Meat & Fish',
-      photo: require('../../Image/meat.png'),
+      photo: require('../../../../assets/Image/meat.png'),
     },
     {
       name: 'Bakery & Snacks',
-      photo: require('../../Image/Bakery.png'),
+      photo: require('../../../../assets/Image/Bakery.png'),
     },
     {
       name: 'Dairy & Eggs',
-      photo: require('../../Image/egg.png'),
+      photo: require('../../../../assets/Image/egg.png'),
     },
     {
       name: 'Beverages',
-      photo: require('../../Image/Beverages.png'),
+      photo: require('../../../../assets/Image/Beverages.png'),
     },
     {
       name: 'Fresh Fruits & Vegetable',
-      photo: require('../../Image/Frashfruits.png'),
+      photo: require('../../../../assets/Image/Frashfruits.png'),
     },
     {
       name: 'Cooking Oil & Ghee',
-      photo: require('../../Image/cooking.png'),
+      photo: require('../../../../assets/Image/cooking.png'),
     },
     {
       name: 'Meat & Fish',
-      photo: require('../../Image/meat.png'),
+      photo: require('../../../../assets/Image/meat.png'),
     },
     {
       name: 'Bakery & Snacks',
-      photo: require('../../Image/Bakery.png'),
+      photo: require('../../../../assets/Image/Bakery.png'),
     },
     {
       name: 'Dairy & Eggs',
-      photo: require('../../Image/egg.png'),
+      photo: require('../../../../assets/Image/egg.png'),
     },
     {
       name: 'Beverages',
-      photo: require('../../Image/Beverages.png'),
+      photo: require('../../../../assets/Image/Beverages.png'),
     },
   ];
 
   const ContactItemList = ({ contact, index }) => {
     return (
+<<<<<<< HEAD:Components/seach/Seach.js
       <TouchableOpacity style={[styles.container1, 
       {backgroundColor: backgroundColors[index % backgroundColors.length],
        borderColor: borderColor[index % borderColor.length]}]}>
+=======
+      <TouchableOpacity style={[styles.container1,
+      {
+        backgroundColor: backgroundColors[index % backgroundColors.length],
+        borderColor: borderColor[index % borderColor.length]
+      }]}>
+>>>>>>> MinhNhut:Components/main/tabs/seach/Seach.js
         <Image source={contact.photo} style={styles.avatar} />
         <Text style={styles.name}>{contact.name} </Text>
       </TouchableOpacity>
@@ -95,7 +106,7 @@ const Search = () => {
       </View>
       <View style={styles.containersearch}>
         <View style={styles.searchWrapper}>
-          <Image source={require('../../Image/ic_search.png')} style={styles.searchIcon} />
+          <Image source={require('../../../../assets/Image/ic_search.png')} style={styles.searchIcon} />
           <TextInput placeholder='Search Store' clearButtonMode='always' style={styles.search} />
         </View>
       </View>

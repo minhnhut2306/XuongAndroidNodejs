@@ -1,7 +1,7 @@
 import { View, Text } from 'react-native';
 import React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import Favourite from '../favourite/Favourite';
+import Favourite from '../main/tabs/favourite/Favourite';
 
 const FavouriteNavigation = () => {
     const Stack = createNativeStackNavigator();
