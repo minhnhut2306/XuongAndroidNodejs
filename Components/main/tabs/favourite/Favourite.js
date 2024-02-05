@@ -1,7 +1,6 @@
-import { View, Text, SafeAreaView, StyleSheet, StatusBar, Image, TouchableOpacity } from 'react-native'
+import { View, Text, SafeAreaView, StyleSheet, StatusBar, Image, TouchableOpacity,FlatList } from 'react-native'
 import React from 'react'
 import styles from '../favourite/styles';
-import { FlatList } from 'react-native-gesture-handler';
 
 
 const Favourite = () => {
@@ -38,7 +37,7 @@ ItemProduct=({item})=>{
       </View>
       <View style={styles.containerprice}>
         <Text style={styles.price}>{price}</Text>
-        <Image resizeMode='contain' source={require('../../Image/backarrow.png')}/>
+        <Image resizeMode='contain' source={require('../../../../assets/Image/backarrow.png')}/>
       </View>
     </View>
   )
