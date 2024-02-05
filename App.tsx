@@ -1,35 +1,25 @@
 import React from 'react';
-import { Text, StyleSheet, View } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native'
-import { createStackNavigator } from '@react-navigation/stack';
+import { SafeAreaView, StatusBar, StyleSheet, } from 'react-native';
+import AppNavigation from './Components/AppNavigation';
+import { AppProvider } from './Components/main/AppContext';
 
-import AccountNavigation from './Components/navigation/AccountNavigation';
-import CartNavigation from './Components/navigation/CartNavigation';
-import FavouriteNavigation from './Components/navigation/FavouriteNavigation';
-import SeachNavigation from './Components/navigation/SeachNavigation';
-import ShopNavigation from './Components/navigation/ShopNavigation';
-import TabNavigation from './Components/navigation/TabNavigation';
-
-
-const Stack = createStackNavigator();
-const App = () => {
+function App(): React.JSX.Element {
   return (
-    <NavigationContainer>
-    <Stack.Navigator initialRouteName="TabNavigation" >
-      <Stack.Screen name="ShopNavigation" component={ShopNavigation} options={{ headerShown: false}} />
-      <Stack.Screen name="SeachNavigation" component={SeachNavigation} options={{ headerShown: false}} />
-      <Stack.Screen name="FavouriteNavigation" component={FavouriteNavigation} options={{ headerShown: false}} />
-      <Stack.Screen name="CartNavigation" component={CartNavigation} options={{ headerShown: false}} />
-      <Stack.Screen name="AccountNavigation" component={AccountNavigation} options={{ headerShown: false}} />
-      <Stack.Screen name="TabNavigation" component={TabNavigation} options={{ headerShown: false}} />
-    </Stack.Navigator>
-  </NavigationContainer>
-
-  )
+    <AppProvider>
+      <SafeAreaView style={styles.container}>
+        <StatusBar />
+        <AppNavigation />
+      </SafeAreaView>
+    </AppProvider>
+  );
 }
+export default App;
 
 const styles = StyleSheet.create({
-
+  container: {
+    flex: 1,
+  },
 });
 
-export default App;
+
+
