@@ -1,6 +1,14 @@
 import React from 'react';
-import { View, Text, StyleSheet, TextInput, Image, FlatList, TouchableOpacity } from 'react-native';
-import { ScrollView } from 'react-native-gesture-handler';
+import {
+  View,
+  Text,
+  StyleSheet,
+  TextInput,
+  Image,
+  FlatList,
+  TouchableOpacity,
+} from 'react-native';
+import {ScrollView} from 'react-native-gesture-handler';
 import styles from './style';
 const Search = () => {
   const backgroundColors = [
@@ -10,7 +18,6 @@ const Search = () => {
     'rgba(211, 176, 224, 0.25)',
     'rgba(253, 229, 152, 0.25)',
     'rgba(183, 223, 245, 0.25)',
-
   ];
   const borderColor = [
     'rgba(83, 177, 117, 0.70)',
@@ -18,7 +25,7 @@ const Search = () => {
     '#F7A59',
     '#D3B0E0',
     '#FDE598',
-    '#B7DFF5'
+    '#B7DFF5',
   ];
 
   const data = [
@@ -72,13 +79,16 @@ const Search = () => {
     },
   ];
 
-  const ContactItemList = ({ contact, index }) => {
+  const ContactItemList = ({contact, index}) => {
     return (
-      <TouchableOpacity style={[styles.container1,
-      {
-        backgroundColor: backgroundColors[index % backgroundColors.length],
-        borderColor: borderColor[index % borderColor.length]
-      }]}>
+      <TouchableOpacity
+        style={[
+          styles.container1,
+          {
+            backgroundColor: backgroundColors[index % backgroundColors.length],
+            borderColor: borderColor[index % borderColor.length],
+          },
+        ]}>
         <Image source={contact.photo} style={styles.avatar} />
         <Text style={styles.name}>{contact.name} </Text>
       </TouchableOpacity>
@@ -92,14 +102,23 @@ const Search = () => {
       </View>
       <View style={styles.containersearch}>
         <View style={styles.searchWrapper}>
-          <Image source={require('../../../../assets/Image/ic_search.png')} style={styles.searchIcon} />
-          <TextInput placeholder='Search Store' clearButtonMode='always' style={styles.search} />
+          <Image
+            source={require('../../../../assets/Image/ic_search.png')}
+            style={styles.searchIcon}
+          />
+          <TextInput
+            placeholder="Search Store"
+            clearButtonMode="always"
+            style={styles.search}
+          />
         </View>
       </View>
 
       <FlatList
         data={data}
-        renderItem={({ item, index }) => <ContactItemList contact={item} index={index} />}
+        renderItem={({item, index}) => (
+          <ContactItemList contact={item} index={index} />
+        )}
         keyExtractor={(item, index) => index.toString()}
         horizontal={false}
         numColumns={2}
@@ -108,6 +127,5 @@ const Search = () => {
     </View>
   );
 };
-
 
 export default Search;

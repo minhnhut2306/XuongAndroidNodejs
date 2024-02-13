@@ -20,3 +20,25 @@ const styles = StyleSheet.create({
     flex: 1,
   },
 });
+// import React from 'react';
+// import {NavigationContainer} from '@react-navigation/native';
+// import {Header, createStackNavigator} from '@react-navigation/stack';
+// import Exclusiveoffer from './Components/main/stacks/product/Exclusiveoffer';
+
+// const Stack = createStackNavigator();
+
+// function App(): React.ReactElement {
+//   return (
+//     <NavigationContainer>
+//       <Stack.Navigator initialRouteName="Exclusiveoffer">
+//         <Stack.Screen
+//           name="Exclusiveoffer"
+//           component={Exclusiveoffer}
+//           options={{headerShown: false}}
+//         />
+//       </Stack.Navigator>
+//     </NavigationContainer>
+//   );
+// }
+
+// export default App;
