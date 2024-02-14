@@ -40,7 +40,7 @@ const Groceries = () => {
         horizontal={true}
         data={groceries}
         renderItem={renderItem}
-        keyExtractor={item => item.id.toString()} // Sử dụng toString() cho key
+        keyExtractor={item => item.id.toString()} 
       />
     </View>
   );
