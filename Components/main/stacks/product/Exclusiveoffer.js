@@ -34,9 +34,6 @@ const Exclusiveoffer = () => {
       </View>
     );
   };
-
-
-
   return (
     <View>
       <FlatList
@@ -49,7 +46,6 @@ const Exclusiveoffer = () => {
     </View>
   );
 };
-
 const styles = StyleSheet.create({
   frameproduct: {
     margin: 7,
